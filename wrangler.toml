@@ -1,6 +1,6 @@
-name = "{{project-name}}"
+name = "cloudfare-app"
 type = "javascript"
-account_id = ""
+account_id = "3048eccc9323d2c31d6a87a38299dd4b"
 workers_dev = true
 route = ""
 zone_id = ""
