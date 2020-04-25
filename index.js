@@ -19,17 +19,24 @@ class HeadingHandler {
 // Changes the incoming description
 class DescriptionHandler {
   element(element) {
-    element.setInnerContent("Thank you for all the work Cloudflare is doing during the COVID-19 crisis! \
-    I will not let you down.");
+    element.setInnerContent("Thank you for all the work Cloudflare is doing during the COVID-19 circumstances! \
+    This is my basic webpage so far.");
   }
 }
 
 // Changes the incoming call to action link
 class URLHandler {
   element(element) {
-    element.setInnerContent("Check out my Social Media Pages!");
+    element.setInnerContent("Check out my linkedin");
+        element.setAttribute("href", "https://github.com/hasan41");
+  }
+}
+
+// Changes the incoming call to action link
+class URLHandler2 {
+  element(element) {
+    element.setInnerContent("Check out my GitHub");
     element.setAttribute("href", "https://www.linkedin.com/in/hasan-naseer-556069154");
-    element.setAttribute("href", "https://github.com/hasan41");
   }
 }
 
@@ -75,7 +82,8 @@ async function handleRequest(req) {
     .on('title', new TitleHandler())
     .on('h1#title', new HeadingHandler())
     .on('p#description', new DescriptionHandler())
-    .on('a#url', new URLHandler());
+    .on('a#url', new URLHandler())
+    .on('a#url2', new URLHandler2())
 
   // Add the cookie, and also reassign res to make the headers mutable
   // Reference: https://developers.cloudflare.com/workers/archive/recipes/setting-a-cookie/
